@@ -22,7 +22,7 @@ form.addEventListener("submit", async function (event) {
 
     if (response.ok) {
         messageElement.textContent = "User registered successfully!";
-        sessionStorage.setItem("user", JSON.stringify(userData));
+        sessionStorage.setItem("username", username);
         window.location.href = "../MainFront/main.html";
     } else if (response.status === 400) {
         messageElement.textContent = "Username already exists. Please choose a different username.";

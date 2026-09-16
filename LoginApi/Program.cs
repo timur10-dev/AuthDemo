@@ -27,15 +27,19 @@ var app = builder.Build();
 
 app.UseCors("AllowFrontend");
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
+
 
 app.UseHttpsRedirection();
 
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 IPasswordHasher<User> passwordHasher = new PasswordHasher<User>();
+
+//redirect http://localhost:5280/ to login page
+app.MapGet("/", () => Results.Redirect("/LoginFront/login.html"));
 
 //log in
 app.MapPost("/login", async (User user, AppDbContext db) =>

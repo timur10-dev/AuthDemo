@@ -4,6 +4,17 @@ A full-stack user authentication application built with C# and ASP.NET Core.
 
 The application provides user registration and login functionality, with user data stored in SQL Server and passwords securely hashed using ASP.NET Core Identity.
 
+## How to Run
+
+1) Make sure you have Docker Desktop installed.
+2) Run the following command from the project folder:
+    `docker compose up --build -d`
+3) Visit the main page at:
+    `http://localhost:5280/`
+
+You can access the Swagger dashboard at:
+    `http://localhost:5280/swagger`
+
 ## Features
 
 - User registration and login
